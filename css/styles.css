@@ -249,19 +249,27 @@ img {
   padding: 10px 0 10px 10px;
 }
 
-.card-heart {
-  font-size: 28px;
-  -webkit-text-stroke: 2px black;
-  color: transparent;
-  padding: 15px 30px;
-}
-
 .gray {
   color: #f2f2f2;
 }
 
 .main-content {
   background-color: #eeeeee;
+}
+
+.logo-flex {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: 75px;
+}
+
+.fa-arrow-left {
+  position: absolute;
+  font-size: 30px;
+  left: 20px;
+  top: 23px;
+  color: black;
 }
 
 .menu-container {
@@ -281,9 +289,9 @@ img {
 .white-stripe {
   position: absolute;
   background-color: #eeeeee;
-  height: 50px;
+  height: 40px;
   width: 100%;
-  border-radius: 50px 50px 0 0;
+  border-radius: 40px 40px 0 0;
   bottom: 0;
 }
 
@@ -292,6 +300,37 @@ img {
      object-fit: cover;
   min-height: 300px;
   width: 100%;
+}
+
+.restaurant-name-box {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.restaurant-name {
+  font-family: "Shrikhand", cursive;
+  font-size: 30px;
+}
+
+.svg-heart-title {
+  fill: transparent;
+  stroke: black;
+  width: 30px;
+}
+.svg-heart-title stop {
+  transition: 0.4s ease;
+}
+.svg-heart-title:hover {
+  stroke: transparent;
+}
+.svg-heart-title:hover stop:first-child {
+  stop-color: #9356DC;
+}
+.svg-heart-title:hover stop:last-child {
+  stop-color: #FF79DA;
 }
 
 .menu-title-box {
@@ -366,7 +405,7 @@ img {
 
 .price {
   width: 76px;
-  padding-top: 45px;
+  padding: 45px 20px 0 0;
   text-align: end;
 }
 
