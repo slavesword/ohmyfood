@@ -3,18 +3,30 @@ html {
   font-size: 16px;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
   font-weight: normal;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
@@ -71,7 +83,7 @@ img {
   display: flex;
   width: 210px;
   height: 48px;
-  background-image: linear-gradient(#FF79DA, #9356DC);
+  background-image: linear-gradient(#ff79da, #9356dc);
   border: solid 0;
   border-radius: 25px;
   align-items: center;
@@ -120,7 +132,7 @@ img {
   top: 20px;
   width: 20px;
   height: 20px;
-  background: #9356DC;
+  background: #9356dc;
   color: white;
   padding: 3px 7px;
   font-size: 12px;
@@ -143,7 +155,26 @@ img {
 }
 
 .fa-store {
-  color: #9356DC;
+  color: #9356dc;
+}
+
+.svg-heart {
+  fill: transparent;
+  stroke: black;
+  padding: 15px 15px 0 0;
+  width: 50px;
+}
+.svg-heart stop {
+  transition: 0.4s ease;
+}
+.svg-heart:hover {
+  stroke: transparent;
+}
+.svg-heart:hover stop:first-child {
+  stop-color: #9356DC;
+}
+.svg-heart:hover stop:last-child {
+  stop-color: #FF79DA;
 }
 
 .restaurants-container {
@@ -170,6 +201,9 @@ img {
 .card:hover {
   box-shadow: 4px 4px 6px rgb(200, 200, 200);
 }
+.card:hover .fa-heart {
+  color: black;
+}
 
 .image-box {
   display: flex;
@@ -181,7 +215,7 @@ img {
 
 .new-box {
   position: absolute;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   height: 28px;
   width: 80px;
   top: 10px;
@@ -216,14 +250,14 @@ img {
 }
 
 .card-heart {
-  font-size: 30px;
-  color: black;
-  font-weight: lighter;
+  font-size: 28px;
+  -webkit-text-stroke: 2px black;
+  color: transparent;
   padding: 15px 30px;
 }
 
 .gray {
-  color: #F2F2F2;
+  color: #f2f2f2;
 }
 
 .main-content {
@@ -268,7 +302,7 @@ img {
 .green-line {
   width: 55px;
   height: 4px;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   margin: 6px 0 0 0;
 }
 
@@ -279,13 +313,13 @@ img {
 .menu-box {
   display: flex;
   justify-content: space-between;
-  position: relative;
   margin: auto;
   width: 90%;
   border-radius: 13px;
-  overflow-x: hidden;
+  overflow: hidden;
   background-color: white;
   height: 76px;
+  cursor: pointer;
 }
 .menu-box:hover {
   box-shadow: 3px 3px 5px rgb(225, 225, 225);
@@ -294,26 +328,31 @@ img {
 .menu-box:hover .green-box {
   width: 76px;
 }
-
 .menu-box:hover .fa-circle-check {
   animation: check-rotate 1s ease-in-out;
 }
-
-.menu-box:hover .price {
-  margin-right: 60px;
+.menu-box:hover .dish-box {
+  width: calc(100% - 76px);
 }
 
 .dish-box {
   display: flex;
+  flex-shrink: 2;
   gap: 5px;
   flex-direction: column;
   padding: 10px 0 10px 10px;
+  overflow: hidden;
+}
+.dish-box > div {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .animation-box {
   display: flex;
+  flex-shrink: 1;
   gap: 5px;
-  padding: 40px 10px 10px 10px;
 }
 
 .dish-title {
@@ -327,19 +366,15 @@ img {
 
 .price {
   width: 76px;
-  padding: auto 10px 10px 20px;
-  margin-right: 0;
-  transition: margin-right 1s ease-in-out 0.3s;
+  padding-top: 45px;
+  text-align: end;
 }
 
 .green-box {
-  position: absolute;
-  background-color: #99E2D0;
+  background-color: #99e2d0;
   text-align: center;
   height: 76px;
   border-radius: 0 13px 13px 0;
-  top: 0;
-  right: 0;
   width: 0px;
   transition: width 1s ease-in-out;
 }
@@ -360,8 +395,12 @@ img {
 }
 
 .footer-box {
-  padding: 20px auto 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   width: 90%;
+  margin: 0 auto 0 auto;
+  padding: 30px 0 40px 0;
 }
 
 .footer-logo {
@@ -372,6 +411,10 @@ img {
 .footer-text {
   font-size: 16px;
   color: white;
+}
+
+.footer-icon {
+  width: 25px;
 }
 
 @keyframes box-slide-in {
