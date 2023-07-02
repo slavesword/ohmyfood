@@ -163,6 +163,7 @@ img {
   stroke: black;
   padding: 15px 15px 0 0;
   width: 50px;
+  cursor: pointer;
 }
 .svg-heart stop {
   transition: 0.4s ease;
@@ -278,11 +279,35 @@ img {
   gap: 20px;
 }
 
-.restaurant-header-image {
+.restaurant-header-image1 {
   position: relative;
   height: 300px;
   overflow: hidden;
   background-image: url("../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+  background-size: cover;
+}
+
+.restaurant-header-image2 {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  background-image: url("../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+  background-size: cover;
+}
+
+.restaurant-header-image3 {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  background-image: url("../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+  background-size: cover;
+}
+
+.restaurant-header-image4 {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  background-image: url("../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
   background-size: cover;
 }
 
@@ -319,6 +344,7 @@ img {
   fill: transparent;
   stroke: black;
   width: 30px;
+  cursor: pointer;
 }
 .svg-heart-title stop {
   transition: 0.4s ease;
