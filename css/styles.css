@@ -40,6 +40,50 @@ img {
   width: 90%;
 }
 
+.loader {
+  position: fixed;
+  background-image: linear-gradient(#ff79da, #9356dc);
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  animation: loading 3s;
+  z-index: 9999;
+}
+
+.spinner {
+  margin: 0 auto;
+  margin-top: 50%;
+  border: 16px solid white; /* Light grey */
+  border-top: 16px solid #99e2d0; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loading {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
 .title {
   font-size: 20px;
   font-weight: bold;
@@ -201,9 +245,6 @@ img {
 }
 .card:hover {
   box-shadow: 4px 4px 6px rgb(200, 200, 200);
-}
-.card:hover .fa-heart {
-  color: black;
 }
 
 .image-box {
@@ -514,27 +555,45 @@ img {
     transform: rotate(-360deg);
   }
 }
-.menuitem-0 {
-  animation: fade-in 1.5s ease-in 0s;
-}
-
 .menuitem-1 {
-  animation: fade-in 1.5s ease-in 0.2s;
+  animation: fade-in-1 1.5s ease-in;
 }
 
 .menuitem-2 {
-  animation: fade-in 1.5s ease-in 0.4s;
+  animation: fade-in-2 1.7s ease-in;
 }
 
 .menuitem-3 {
-  animation: fade-in 1.5s ease-in 0.6s;
+  animation: fade-in-3 1.9s ease-in;
 }
 
-@keyframes fade-in {
+@keyframes fade-in-1 {
   from {
     opacity: 0;
   }
   to {
+    opacity: 1;
+  }
+}
+@keyframes fade-in-2 {
+  0% {
+    opacity: 0;
+  }
+  12% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in-3 {
+  0% {
+    opacity: 0;
+  }
+  21% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
   }
 }/*# sourceMappingURL=styles.css.map */

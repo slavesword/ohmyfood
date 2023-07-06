@@ -40,6 +40,45 @@ $rose: #ff79da;
   width: 90%;
 }
 
+.loader {
+  position: fixed;
+  background-image: linear-gradient($rose, $purple);
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  animation: loading 3s;
+  z-index: 9999;
+}
+.spinner {
+  margin: 0 auto;
+  margin-top: 50%;
+  border: 16px solid white;
+  border-top: 16px solid $mint;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes loading {
+  0% { 
+    visibility: visible;
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% { 
+    visibility: hidden; 
+    opacity: 0;
+  }
+}
+
 .title {
   font-size: 20px;
   font-weight: bold;
@@ -152,8 +191,6 @@ $rose: #ff79da;
 .svg-heart {
   fill: transparent;
   stroke:black;
-  padding: 15px 15px 0 0;
-  width: 50px;
   stop {
     transition: 0.4s ease;
   }
@@ -169,7 +206,10 @@ $rose: #ff79da;
   }
   cursor: pointer;
 }
-
+.heart-main {
+  padding: 15px 15px 0 0;
+  width: 50px;
+}
 .restaurants-container {
   display: flex;
   flex-direction: column;
@@ -191,9 +231,6 @@ $rose: #ff79da;
   text-decoration: none;
   &:hover {
     box-shadow: 4px 4px 6px rgb(200, 200, 200);
-  }
-  &:hover .fa-heart {
-    color: black;
   }
 }
 .image-box {
@@ -316,24 +353,8 @@ $rose: #ff79da;
   font-size: 30px;
   
 }
-.svg-heart-title {
-  fill: transparent;
-  stroke:black;
+.heart-title {
   width: 30px;
-  stop {
-    transition: 0.4s ease;
-  }
-  &:hover {
-    stroke: transparent;
-    stop:first-child {
-      stop-color: #9356DC;
-    }
-
-    stop:last-child {
-      stop-color: #FF79DA;
-    }
-  }
-  cursor: pointer;
 }
 .menu-title-box {
   width: 90%;
@@ -488,17 +509,44 @@ $rose: #ff79da;
 @mixin check-slide-animation {
   animation: check-slide 1s ease-in-out both;
 }
-
-@for $i from 0 through 3 {
-  .menuitem-#{$i} {
-    animation: fade-in 1.5s ease-in $i * 0.2s;
-  }
+.menuitem-1 {
+  animation: fade-in-1 1.5s ease-in;
 }
-@keyframes fade-in {
+.menuitem-2 {
+  animation: fade-in-2 1.7s ease-in;
+}
+.menuitem-3 {
+  animation: fade-in-3 1.9s ease-in;
+}
+@keyframes fade-in-1 {
   from {
     opacity: 0;
   }
   to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-2 {
+  0% {
+    opacity: 0;
+  }
+  12% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-3 {
+  0% {
+    opacity: 0;
+  }
+  21% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
   }
 }
