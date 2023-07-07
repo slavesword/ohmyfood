@@ -55,8 +55,8 @@ img {
 .spinner {
   margin: 0 auto;
   margin-top: 50%;
-  border: 16px solid white; /* Light grey */
-  border-top: 16px solid #99e2d0; /* Blue */
+  border: 16px solid white;
+  border-top: 16px solid #99e2d0;
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -141,6 +141,7 @@ img {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-top: 20px;
 }
 
 .how-button-container {
@@ -157,6 +158,19 @@ img {
   transition: transform 100ms ease-out;
 }
 
+@media screen and (min-width: 768px) {
+  .how-button-container {
+    max-width: 500px;
+  }
+}
+@media screen and (min-width: 960px) {
+  .how-button-container {
+    width: 100%;
+  }
+  .how-container {
+    flex-direction: row;
+  }
+}
 .how-button {
   display: flex;
   height: 60px;
@@ -205,8 +219,6 @@ img {
 .svg-heart {
   fill: transparent;
   stroke: black;
-  padding: 15px 15px 0 0;
-  width: 50px;
   cursor: pointer;
 }
 .svg-heart stop {
@@ -222,15 +234,16 @@ img {
   stop-color: #FF79DA;
 }
 
+.heart-main {
+  padding: 15px 15px 0 0;
+  width: 50px;
+}
+
 .restaurants-container {
   display: flex;
   flex-direction: column;
   gap: 20px;
   margin: 20px auto 40px auto;
-}
-
-.restaurants-title {
-  margin: 40px auto 0 auto;
 }
 
 .card {
@@ -245,6 +258,22 @@ img {
 }
 .card:hover {
   box-shadow: 4px 4px 6px rgb(200, 200, 200);
+}
+
+@media screen and (min-width: 768px) {
+  .restaurants-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-row: auto;
+    gap: 20px;
+    margin: 20px auto 40px auto;
+  }
+  .card {
+    justify-self: stretch;
+  }
+}
+.restaurants-title {
+  margin: 40px auto 0 auto;
 }
 
 .image-box {
@@ -320,6 +349,11 @@ img {
   gap: 20px;
 }
 
+@media screen and (min-width: 768px) {
+  .menu-container {
+    margin: auto 15%;
+  }
+}
 .restaurant-header-image1 {
   position: relative;
   height: 300px;
@@ -381,25 +415,18 @@ img {
   font-size: 30px;
 }
 
-.svg-heart-title {
-  fill: transparent;
-  stroke: black;
+.heart-title {
   width: 30px;
-  cursor: pointer;
-}
-.svg-heart-title stop {
-  transition: 0.4s ease;
-}
-.svg-heart-title:hover {
-  stroke: transparent;
-}
-.svg-heart-title:hover stop:first-child {
-  stop-color: #9356DC;
-}
-.svg-heart-title:hover stop:last-child {
-  stop-color: #FF79DA;
 }
 
+@media screen and (min-width: 768px) {
+  .restaurant-name {
+    margin-left: 15%;
+  }
+  .heart-padding {
+    margin-right: 15%;
+  }
+}
 .menu-title-box {
   width: 90%;
   margin: 40px auto 0 auto;
@@ -515,6 +542,7 @@ img {
 }
 
 .footer-text {
+  text-decoration: none;
   font-size: 16px;
   color: white;
 }
